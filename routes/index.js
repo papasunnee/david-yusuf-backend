@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 // const { ApolloServer } = require('apollo-server-express');
 
-const serveStatic = require('serve-static');
+// const serveStatic = require('serve-static');
 
 const schema = require('../graphql/schema');
 const getContext = require('../graphql/lib/getContext');
@@ -30,8 +30,7 @@ module.exports = (app) => {
 
 
   // Views
-  app.get('/admin', (req, res) => { res.redirect('/keystone'); });
+  app.get('/', (req, res) => { res.redirect('/keystone'); });
   // Client App
-  app.use(serveStatic(`${__dirname}/client`));
-
+  // app.use(serveStatic(`${__dirname}/client`));
 };
