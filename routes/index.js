@@ -2,11 +2,6 @@ const apolloServer = require('../apolloServer');
 
 const apiPath = '/graphql';
 
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-};
-
 // Setup Route Bindings
 module.exports = (app) => {
   // Views
@@ -16,5 +11,5 @@ module.exports = (app) => {
   app.get('/', (req, res) => {
     res.redirect('/keystone');
   });
-  apolloServer.applyMiddleware({ app, path: apiPath, cors: corsOptions });
+  apolloServer.applyMiddleware({ app, path: apiPath });
 };
