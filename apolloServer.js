@@ -5,7 +5,7 @@ const schema = require('./graphql/schema');
 const getContext = require('./graphql/lib/getContext');
 // const corsOptions = require('../config/corsOptions');
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: '*',
   credentials: true,
 };
 
